@@ -105,7 +105,6 @@ export default function AddPointModal() {
 
     setSelectedMaterials(updatedMaterials);
 
-    // Clear materials error when user selects something
     if (validationErrors.materials) {
       setValidationErrors((currentErrors) => ({
         ...currentErrors,
@@ -116,7 +115,7 @@ export default function AddPointModal() {
 
   const handleInputChange = (field: string, value: string) => {
     setFormData({ [field]: value });
-    // Clear field error when user starts typing
+
     if (validationErrors[field]) {
       setValidationErrors((currentErrors) => ({
         ...currentErrors,

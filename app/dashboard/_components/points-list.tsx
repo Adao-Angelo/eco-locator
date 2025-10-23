@@ -10,7 +10,6 @@ interface PointsListProps {
   allPointsCount: number;
 }
 
-// Componente PointCard movido para dentro do mesmo arquivo
 function PointCard({ point, onDelete }: { point: any; onDelete: () => void }) {
   return (
     <div className="bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-200 hover:border-emerald-500/20 group">

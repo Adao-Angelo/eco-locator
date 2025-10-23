@@ -39,7 +39,6 @@ export default function DashboardPage() {
       <DashboardHeader />
 
       <main className="max-w-7xl mx-auto px-6 pt-32 pb-12 space-y-8">
-        {/* Welcome Section */}
         <section className="text-center">
           <h2 className="text-3xl font-bold mb-2">
             Welcome back, {user?.email?.split("@")[0] || "Admin"}!
@@ -49,25 +48,20 @@ export default function DashboardPage() {
           </p>
         </section>
 
-        {/* Stats Cards */}
         <StatsCards stats={stats} />
 
-        {/* Filters */}
         <FiltersSection />
 
-        {/* Map */}
         <section className="bg-white/5 backdrop-blur-md p-6 rounded-xl border border-white/10">
           <h2 className="text-xl font-semibold mb-4">Map Overview</h2>
           <MapWithPoints points={filteredPoints} />
         </section>
 
-        {/* Materials Distribution */}
         <MaterialsDistribution
           materialCounts={materialCounts}
           totalPoints={stats.total}
         />
 
-        {/* Points List */}
         <PointsList
           filteredPoints={filteredPoints}
           allPointsCount={stats.total}
