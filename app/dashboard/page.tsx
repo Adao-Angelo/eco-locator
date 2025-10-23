@@ -57,14 +57,14 @@ export default function DashboardPage() {
           <MapWithPoints points={filteredPoints} />
         </section>
 
-        <MaterialsDistribution
-          materialCounts={materialCounts}
-          totalPoints={stats.total}
-        />
-
         <PointsList
           filteredPoints={filteredPoints}
           allPointsCount={stats.total}
+        />
+
+        <MaterialsDistribution
+          materialCounts={materialCounts}
+          totalPoints={stats.total}
         />
       </main>
 

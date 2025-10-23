@@ -49,7 +49,7 @@ export default function PointsList({
         </div>
       </div>
 
-      <div className="space-y-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {filteredPoints.length === 0 ? (
           <div className="text-center py-12 text-zinc-400">
             <MapPin className="w-12 h-12 mx-auto mb-4 opacity-50" />
