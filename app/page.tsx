@@ -3,56 +3,22 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { createClient } from "@/lib/supabase/client";
-import { loginSchema } from "@/lib/validations";
 import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
-import { z } from "zod";
+import { useCallback } from "react";
+
+import useLogin from "./_hooks/use-login";
 
 export default function LoginPage() {
   const router = useRouter();
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-  const [formData, setFormData] = useState({ email: "", password: "" });
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    setError("");
+  const onSuccess = useCallback(() => {
+    router.push("/dashboard");
+    router.refresh();
+  }, [router]);
 
-    try {
-      loginSchema.parse(formData);
-
-      const supabase = createClient();
-      const { data, error } = await supabase.auth.signInWithPassword({
-        email: formData.email,
-        password: formData.password,
-      });
-
-      if (error) {
-        setError(error.message);
-        return;
-      }
-
-      if (data.user) {
-        router.push("/dashboard");
-        router.refresh();
-      }
-    } catch (err) {
-      if (err instanceof z.ZodError) {
-        setError(err.issues[0].message);
-      } else {
-        setError("An unexpected error occurred. Please try again.");
-      }
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
+  const { formData, handleChange, handleSubmit, loading, error } =
+    useLogin(onSuccess);
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-zinc-900 via-emerald-900 to-zinc-800 relative overflow-hidden">
