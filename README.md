@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Eco Locator
 
-## Getting Started
+A Next.js application to manage and locate recycling points. Provides an admin dashboard to view statistics, an interactive map of points, filters, and a form to add new points.
 
-First, run the development server:
+Main goals:
+- Register recycling points with accepted materials, contact info, opening hours and location.
+- Visualize points on a map and filter by materials and status.
+- Provide a simple admin dashboard to monitor metrics.
 
+Status
+- Implementation: functional (frontend)
+- Tests: basic coverage using Vitest
+- Deployment: ready for Vercel
+
+Features
+- Interactive list and map of recycling points
+- Modal form to create points with validation
+- Dashboard with statistic cards and materials distribution
+- Minimal authentication (login)
+- Simple unit tests with Vitest + Testing Library
+
+Technologies
+- Next.js (App Router)
+- React + TypeScript
+- Tailwind CSS
+- Vitest + @testing-library/react
+- Supabase (backend/services client included)
+- lucide-react (icons)
+
+Requirements
+- Node.js 18+
+- pnpm (recommended) / npm / yarn
+
+Installation (example using pnpm)
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Running in development
+```bash
+pnpm dev
+# or
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Build and production
+```bash
+pnpm build
+pnpm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Tests
+```bash
+pnpm exec vitest run
+# watch mode
+pnpm exec vitest --watch
+```
 
-## Learn More
+Useful scripts (in `package.json`)
+- dev — start development server
+- build — create production build
+- start — run production build
+- test — run Vitest
+- test:watch — run Vitest in watch mode
 
-To learn more about Next.js, take a look at the following resources:
+Applied best practices (summary)
+- Small, reusable UI components in `components/ui/*`.
+- Separation of concerns: custom hooks and business logic in `app/hooks` or `hooks/`.
+- Explicit TypeScript types and use of `React.forwardRef` where applicable.
+- Tests placed next to components for easy maintenance.
+- Lightweight optimizations: `React.memo` for pure components and dynamic imports for heavy client-only modules (map) with `ssr: false`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Project structure (high level)
+- `app/` — routes and pages (Next.js App Router)
+- `app/dashboard/_components` — dashboard components
+- `components/ui` — shared UI components (Card, Button, Input, ...)
+- `lib/` — utilities and services (e.g. Supabase client)
+- Test files next to components or a `tests/` folder
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Contribution guide
+1. Create a feature branch from `main`.
+2. Run linters and tests locally before committing.
+3. Keep commits small and use clear commit messages.
+4. Open a pull request describing your changes and any added tests.
 
-## Deploy on Vercel
+Deployment
+- Recommended platform: Vercel (default Next.js configuration works well).
+- Ensure required environment variables are set in production (e.g. `SUPABASE_URL`, `SUPABASE_KEY`).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Quick tips
+- Run `pnpm exec vitest --coverage` to see test coverage.
+- Run linters and Prettier before commits.
+- Keep components small and pure to make testing and maintenance easier.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+License
+- Add a LICENSE file and choose an appropriate license (e.g. MIT).
+
+Contact
+- Maintained by the project owner. Open an issue for bugs or feature requests.
