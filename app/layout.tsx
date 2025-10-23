@@ -27,7 +27,6 @@ export const metadata: Metadata = {
     "collection points",
   ],
   authors: [{ name: "EcoLocator Team" }],
-  viewport: "width=device-width, initial-scale=1",
   robots: "index, follow",
   openGraph: {
     title: "EcoLocator Admin Panel",
@@ -44,7 +43,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body className={`${roboto.variable} ${robotoMono.variable} antialiased`}>
         {children}
       </body>
