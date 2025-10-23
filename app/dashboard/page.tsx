@@ -2,12 +2,12 @@
 
 import dynamic from "next/dynamic";
 
-import AddPointModal from "./_components/add-point-modal";
+import AddPointModal from "./_components/add-point-modal/add-point-modal";
 import FiltersSection from "./_components/filters-section";
 import DashboardHeader from "./_components/header";
-import MaterialsDistribution from "./_components/materials-distribution";
+import MaterialsDistribution from "./_components/materials-distribution/materials-distribution";
 import PointsList from "./_components/points-list";
-import StatsCards from "./_components/stats-cards";
+import StatsCards from "./_components/stats-cards/stats-cards";
 import { useDashboard } from "./_hooks/use-dashboard";
 
 const MapWithPoints = dynamic(() => import("./_components/map-with-points"), {

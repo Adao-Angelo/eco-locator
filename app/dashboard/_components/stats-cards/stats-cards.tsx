@@ -1,7 +1,7 @@
 "use client";
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Activity, BarChart3, MapPin, Users } from "lucide-react";
+import { getStatItems } from "./const";
 
 interface StatsCardsProps {
   stats: {
@@ -13,36 +13,9 @@ interface StatsCardsProps {
 }
 
 export default function StatsCards({ stats }: StatsCardsProps) {
-  const statItems = [
-    {
-      title: "Total Points",
-      value: stats.total,
-      icon: <MapPin className="w-5 h-5" />,
-      color: "emerald" as const,
-    },
-    {
-      title: "Active Points",
-      value: stats.active,
-      icon: <Activity className="w-5 h-5" />,
-      color: "blue" as const,
-    },
-    {
-      title: "Material Types",
-      value: stats.materialTypes,
-      icon: <BarChart3 className="w-5 h-5" />,
-      color: "yellow" as const,
-    },
-    {
-      title: "Inactive Points",
-      value: stats.inactive,
-      icon: <Users className="w-5 h-5" />,
-      color: "red" as const,
-    },
-  ];
-
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      {statItems.map((item) => (
+      {getStatItems(stats).map((item) => (
         <StatCard
           key={item.title}
           title={item.title}
