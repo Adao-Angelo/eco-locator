@@ -54,7 +54,7 @@ export default function MapWithPoints({ points }: MapWithPointsProps) {
     <div className="h-80 rounded-lg overflow-hidden">
       <MapContainer
         center={center}
-        zoom={13}
+        zoom={5}
         style={{ height: "100%", width: "100%" }}
         scrollWheelZoom={false}
       >
