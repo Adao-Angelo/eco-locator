@@ -48,7 +48,7 @@ export default function FiltersSection() {
         </div>
 
         <Select value={materialFilter} onValueChange={setMaterialFilter}>
-          <SelectTrigger className="bg-white/10 border-white/20 text-white">
+          <SelectTrigger className="bg-white/10 border-white/20 text-white w-full">
             <SelectValue placeholder="Filter by material" />
           </SelectTrigger>
           <SelectContent>
@@ -62,7 +62,7 @@ export default function FiltersSection() {
         </Select>
 
         <Select value={statusFilter} onValueChange={setStatusFilter}>
-          <SelectTrigger className="bg-white/10 border-white/20 text-white">
+          <SelectTrigger className="bg-white/10 border-white/20 text-white w-full">
             <SelectValue placeholder="Filter by status" />
           </SelectTrigger>
           <SelectContent>
