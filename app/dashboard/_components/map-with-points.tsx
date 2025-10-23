@@ -48,7 +48,7 @@ export default function MapWithPoints({ points }: MapWithPointsProps) {
 
   const center: [number, number] = points[0]
     ? [points[0].latitude, points[0].longitude]
-    : [-8.814848852686413, 13.224017735462231];
+    : [-23.5505, -46.6333];
 
   return (
     <div className="h-80 rounded-lg overflow-hidden">
