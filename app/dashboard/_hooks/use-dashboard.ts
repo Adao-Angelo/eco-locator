@@ -64,15 +64,15 @@ export function useDashboard() {
   });
 
   const stats = {
-    total: filteredPoints.length,
-    active: filteredPoints.filter((point) => point.status === "active").length,
-    inactive: filteredPoints.filter((point) => point.status === "inactive")
+    total: recyclingPoints.length,
+    active: recyclingPoints.filter((point) => point.status === "active").length,
+    inactive: recyclingPoints.filter((point) => point.status === "inactive")
       .length,
-    materialTypes: new Set(filteredPoints.flatMap((point) => point.materials))
+    materialTypes: new Set(recyclingPoints.flatMap((point) => point.materials))
       .size,
   };
 
-  const materialCounts = filteredPoints.reduce((acc, point) => {
+  const materialCounts = recyclingPoints.reduce((acc, point) => {
     point.materials.forEach((material) => {
       acc[material] = (acc[material] || 0) + 1;
     });
