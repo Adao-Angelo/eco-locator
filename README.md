@@ -1,99 +1,167 @@
-# Eco Locator
+# ♻️ Eco Locator
 
-A Next.js application to manage and locate recycling points. Provides an admin dashboard to view statistics, an interactive map of points, filters, and a form to add new points.
+A **Next.js** application to manage and locate recycling points.  
+Includes an **admin dashboard**, **interactive map**, and **dynamic forms** to register and monitor eco-points.
 
-Main goals:
-- Register recycling points with accepted materials, contact info, opening hours and location.
-- Visualize points on a map and filter by materials and status.
-- Provide a simple admin dashboard to monitor metrics.
+---
 
-Status
-- Implementation: functional (frontend)
-- Tests: basic coverage using Vitest
-- Deployment: ready for Vercel
+## 🌍 Main Goals
 
-Features
-- Interactive list and map of recycling points
-- Modal form to create points with validation
-- Dashboard with statistic cards and materials distribution
-- Minimal authentication (login)
-- Simple unit tests with Vitest + Testing Library
+- Register recycling points with accepted materials, contact info, opening hours, and location.  
+- Visualize points on an interactive map and filter by materials or status.  
+- Provide a simple admin dashboard to monitor key metrics.
 
-Technologies
+---
+
+## 🚀 Project Status
+
+| Stage | Status |
+|--------|--------|
+| Implementation | ✅ Functional (frontend) |
+| Tests | 🧪 Basic coverage with Vitest |
+| Deployment | 🌐 Ready for Vercel |
+
+---
+
+## ✨ Features
+
+- Interactive list and map of recycling points  
+- Modal form with validation for new entries  
+- Dashboard with statistics and materials distribution  
+- Simple login authentication  
+- Unit tests with **Vitest + Testing Library**
+
+---
+
+## 🧰 Technologies
+
 - Next.js (App Router)
 - React + TypeScript
 - Tailwind CSS
-- Vitest + @testing-library/react
-- Supabase (backend/services client included)
+- Supabase
 - lucide-react (icons)
+- Vitest + @testing-library/react
 
-Requirements
-- Node.js 18+
+---
+
+## ⚙️ Requirements
+
+- Node.js 18+  
 - pnpm (recommended) / npm / yarn
 
-Installation (example using pnpm)
+---
+
+## 🧩 Installation
+
 ```bash
 pnpm install
 ```
 
-Running in development
+---
+
+## 🧠 Development
+
 ```bash
 pnpm dev
 # or
 npm run dev
 ```
 
-Build and production
+---
+
+## 🏗️ Build and Production
+
 ```bash
 pnpm build
 pnpm start
 ```
 
-Tests
+---
+
+## 🧪 Tests
+
 ```bash
 pnpm exec vitest run
 # watch mode
 pnpm exec vitest --watch
 ```
 
-Useful scripts (in `package.json`)
-- dev — start development server
-- build — create production build
-- start — run production build
-- test — run Vitest
-- test:watch — run Vitest in watch mode
+---
 
-Applied best practices (summary)
-- Small, reusable UI components in `components/ui/*`.
-- Separation of concerns: custom hooks and business logic in `app/hooks` or `hooks/`.
-- Explicit TypeScript types and use of `React.forwardRef` where applicable.
-- Tests placed next to components for easy maintenance.
-- Lightweight optimizations: `React.memo` for pure components and dynamic imports for heavy client-only modules (map) with `ssr: false`.
+## 📜 Package Scripts
 
-Project structure (high level)
-- `app/` — routes and pages (Next.js App Router)
-- `app/dashboard/_components` — dashboard components
-- `components/ui` — shared UI components (Card, Button, Input, ...)
-- `lib/` — utilities and services (e.g. Supabase client)
-- Test files next to components or a `tests/` folder
+| Script | Description |
+|---------|-------------|
+| dev | Start development server |
+| build | Create production build |
+| start | Run production build |
+| test | Run Vitest |
+| test:watch | Run Vitest in watch mode |
 
-Contribution guide
-1. Create a feature branch from `main`.
-2. Run linters and tests locally before committing.
-3. Keep commits small and use clear commit messages.
-4. Open a pull request describing your changes and any added tests.
+---
 
-Deployment
-- Recommended platform: Vercel (default Next.js configuration works well).
-- Ensure required environment variables are set in production (e.g. `SUPABASE_URL`, `SUPABASE_KEY`).
+## 🧱 Best Practices
 
-Quick tips
-- Run `pnpm exec vitest --coverage` to see test coverage.
-- Run linters and Prettier before commits.
-- Keep components small and pure to make testing and maintenance easier.
+- Reusable, small UI components inside `components/ui/*`  
+- Business logic separated in `hooks/`  
+- Explicit TypeScript types and usage of `React.forwardRef`  
+- Tests located near related components  
+- Optimizations using `React.memo` and dynamic imports (`ssr: false`)
 
-License
-- Add a LICENSE file and choose an appropriate license (e.g. MIT).
+---
 
-Contact
-- Maintained by the project owner. Open an issue for bugs or feature requests.
+## 🗂️ Project Structure
+
+```
+app/
+ ├─ dashboard/_components/   # dashboard components
+ ├─ hooks/                   # custom hooks and logic
+components/
+ └─ ui/                      # shared UI components
+lib/
+ └─ supabase.ts              # Supabase client and utilities
+tests/                       # test files
+```
+
+---
+
+## 🤝 Contribution Guide
+
+1. Create a feature branch from `main`.  
+2. Run linters and tests locally before committing.  
+3. Keep commits small and descriptive.  
+4. Open a Pull Request describing your changes and added tests.
+
+---
+
+## ☁️ Deployment
+
+- Recommended platform: **Vercel**  
+- Ensure production environment variables are set:  
+  - `SUPABASE_URL`  
+  - `SUPABASE_KEY`
+
+---
+
+## 💡 Quick Tips
+
+- Run `pnpm exec vitest --coverage` to see coverage report.  
+- Use linters and Prettier before commits.  
+- Keep components small and maintainable.
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** — see the [LICENSE](./LICENSE) file for details.
+
+```
+MIT License © 2025 Adao Ângelo João
+```
+
+---
+
+## 📬 Contact
+
+📧 **Email:** [adãobegginer@gmail.com](mailto:adãobegginer@gmail.com)  
+Developed with dedication by **Adao Ângelo João**
